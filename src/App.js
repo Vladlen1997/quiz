@@ -15,7 +15,7 @@ const questions = [{
 },];
 
 
-function Game({question}) {
+function Game({question, onClickVariant}) {
     return (<>
         <div className="progress">
             <div style={{width: '50%'}} className="progress__inner"></div>
@@ -24,7 +24,7 @@ function Game({question}) {
         <ul>
             {
                 question.variants.map((variant) => (
-                    <li key={variant}>{variant}</li>
+                    <li onClick={onClickVariant} key={variant}>{variant}</li>
                 ))
             }
         </ul>
@@ -48,7 +48,7 @@ function App() {
         console.log(step, index);
     }
     return (<div className="App">
-        <Game question={question} onClickVariant={onClickVariant} />
+        <Game question={question} onClickVariant={onClickVariant}/>
         {/* <Result /> */}
     </div>);
 }
