@@ -43,8 +43,12 @@ function Result() {
 function App() {
     const [step, setStep] = React.useState(0);
     const question = questions[step];
+
+    const onClickVariant = (index) => {
+        console.log(step, index);
+    }
     return (<div className="App">
-        <Game question={question}/>
+        <Game question={question} onClickVariant={onClickVariant} />
         {/* <Result /> */}
     </div>);
 }
