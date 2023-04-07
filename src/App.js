@@ -46,6 +46,7 @@ function App() {
 
     const onClickVariant = (index) => {
         console.log(step, index);
+        setStep(step + 1);
     }
     return (<div className="App">
         <Game question={question} onClickVariant={onClickVariant}/>
