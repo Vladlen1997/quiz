@@ -17,7 +17,7 @@ const questions = [{
 
 function Game({step, question, onClickVariant}) {
     const percentage = Math.round((step / questions.length) * 100);
-    console.log(percentage)
+
     return (<>
         <div className="progress">
             <div style={{width: `${percentage}%`}} className="progress__inner"></div>
@@ -50,10 +50,14 @@ function App() {
         console.log(step, index);
         setStep(step + 1);
     }
-    return (<div className="App">
-        <Game step={step} question={question} onClickVariant={onClickVariant}/>
-        {/* <Result /> */}
-    </div>);
+    return (
+        <div className="App">
+            {step !== questions.length ? (
+                <Game step={step} question={question} onClickVariant={onClickVariant}/>) :
+                (<Result/>)
+            }
+
+        </div>);
 }
 
 export default App;
