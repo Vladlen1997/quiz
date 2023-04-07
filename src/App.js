@@ -22,9 +22,11 @@ function Game({question}) {
         </div>
         <h1>{question.title}</h1>
         <ul>
-            <li>Это функция для хранения данных компонента</li>
-            <li>Это глобальный стейт</li>
-            <li>Это когда на ты никому не нужен</li>
+            {
+                question.variants.map((variant) => (
+                    <li key={variant}>{variant}</li>
+                ))
+            }
         </ul>
     </>);
 }
