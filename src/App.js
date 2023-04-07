@@ -40,8 +40,9 @@ function Result() {
 
 function App() {
     const [step, setStep] = React.useState(0);
+    const question = questions[step];
     return (<div className="App">
-        <Game/>
+        <Game question={question}/>
         {/* <Result /> */}
     </div>);
 }
