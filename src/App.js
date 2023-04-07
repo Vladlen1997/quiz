@@ -24,7 +24,7 @@ function Game({question, onClickVariant}) {
         <ul>
             {
                 question.variants.map((variant, index) => (
-                    <li onClick={() => onClickVariant} key={variant}>{variant}</li>
+                    <li onClick={() => onClickVariant(index)} key={variant}>{variant}</li>
                 ))
             }
         </ul>
