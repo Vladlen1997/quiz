@@ -1,5 +1,6 @@
 import './index.scss';
 import './App.scss';
+import React from 'react';
 
 const questions = [{
     title: 'React - это ... ?', variants: ['библиотека', 'фреймворк', 'приложение'], correct: 0,
@@ -38,6 +39,7 @@ function Result() {
 }
 
 function App() {
+    const [step, setStep] = React.useState(0);
     return (<div className="App">
         <Game/>
         {/* <Result /> */}
